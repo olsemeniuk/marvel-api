@@ -1,2 +1,6 @@
-.idea/
-hidden_data/
+/.idea
+/src/hidden_data
+/node_modules
+/dist
+/.parcel-cache
+package-lock.json
