@@ -3,7 +3,7 @@ import * as classes from "./Error.module.css";
 
 class Error {
     render() {
-        const htmlWrapper = `
+        ROOT_INDEX.innerHTML = `
             <div class="${classes.wrapper}">
                 <div>
                     <p class="${classes.alert}">Error!</p>
@@ -11,8 +11,6 @@ class Error {
                 </div> 
             </div> 
         `;
-
-        ROOT_INDEX.innerHTML = htmlWrapper;
     }
 }
 

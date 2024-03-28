@@ -3,6 +3,7 @@ import {ROOT_INDEX} from "../../constants/root";
 
 import getDataApi from "../../utils/getDataApi";
 import error from "../Error";
+import characters from "../Characters";
 
 import * as classes from "./Comics.module.css";
 
@@ -33,12 +34,13 @@ class Comics {
     eventListener() {
         const comicsList = document.querySelector(`.${classes.list}`);
         if (!comicsList) return;
-        comicsList.addEventListener("click", event => {
+        comicsList.addEventListener("click", async (event) => {
             const {target} = event;
             const isItem = target.closest(`.${classes.item}`);
             if (!isItem) return;
 
             const charactersUrl = isItem.dataset.url;
+            await characters.render(charactersUrl);
         });
     }
 }
