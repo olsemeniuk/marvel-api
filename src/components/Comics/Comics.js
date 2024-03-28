@@ -6,6 +6,7 @@ import error from "../Error";
 import characters from "../Characters";
 
 import * as classes from "./Comics.module.css";
+import spinner from "../Spinner";
 
 class Comics {
     renderComics(data) {
@@ -27,8 +28,10 @@ class Comics {
     }
 
     async render() {
+        spinner.render();
         const data = await getDataApi.getData(BASIC_URL + COMICS_URL);
         data ? this.renderComics(data) : error.render();
+        spinner.handleClear();
     }
 
     eventListener() {

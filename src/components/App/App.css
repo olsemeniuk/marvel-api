@@ -25,7 +25,7 @@ html {
 
 body {
     display            : grid;
-    grid-template-rows : 1fr auto auto;
+    grid-template-rows : 1fr repeat(3, auto);
     min-height         : 100%;
     margin             : 0;
     padding            : 0;
