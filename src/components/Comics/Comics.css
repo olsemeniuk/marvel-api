@@ -1,0 +1,35 @@
+.comics-list {
+    display               : grid;
+    grid-template-columns : repeat(auto-fill, minmax(200px, 1fr));
+    gap                   : var(--spacing-lg);
+    max-width             : 1200px;
+    margin                : 0 auto;
+    padding               : 0 10px;
+}
+
+.comics-list__item {
+    display          : flex;
+    flex-direction   : column;
+    justify-content  : space-between;
+    list-style-type  : none;
+    background-color : var(--color-light);
+    transition       : all 0.5s ease;
+    cursor           : pointer;
+}
+
+.comics-list__item:hover {
+    transform : rotate(-3deg) scale(0.95);
+    filter    : saturate(150%);
+}
+
+.comics-list__item-title {
+    display : flex;
+    margin  : auto;
+    padding : var(--spacing-sm) var(--spacing-md);
+}
+
+.comics-list__item-img {
+    width           : 100%;
+    object-fit      : cover;
+    object-position : center;
+}

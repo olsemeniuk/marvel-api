@@ -1,6 +1,11 @@
 :root {
-    --color-dark : #222222;
-    --color-blue : #3199dc;
+    --color-dark  : #222222;
+    --color-blue  : #3199dc;
+    --color-light : #f8f9fa;
+
+    --spacing-sm  : 10px;
+    --spacing-md  : 15px;
+    --spacing-lg  : 20px;
 }
 
 html {
@@ -16,5 +21,8 @@ html {
 body {
     margin           : 0;
     padding          : 0;
+    font-family      : "Arial", sans-serif;
+    font-size        : 16px;
+    line-height      : 1.7;
     background-color : var(--color-dark);
 }
