@@ -9,11 +9,12 @@
     --spacing-md  : 15px;
     --spacing-lg  : 20px;
 
-    --box-shadow: 0 2px 24px rgba(168, 175, 196, 0.5);
+    --box-shadow  : 0 2px 24px rgba(168, 175, 196, 0.5);
 }
 
 html {
     box-sizing : border-box;
+    height     : 100%;
 }
 
 *,
@@ -23,12 +24,15 @@ html {
 }
 
 body {
-    margin           : 0;
-    padding          : 0;
-    font-family      : "Arial", sans-serif;
-    font-size        : 16px;
-    line-height      : 1.7;
-    background-color : var(--color-dark);
+    display            : grid;
+    grid-template-rows : 1fr auto auto;
+    min-height         : 100%;
+    margin             : 0;
+    padding            : 0;
+    font-family        : "Arial", sans-serif;
+    font-size          : 16px;
+    line-height        : 1.7;
+    background-color   : var(--color-dark);
 }
 
 img {

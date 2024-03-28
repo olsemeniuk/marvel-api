@@ -18,6 +18,7 @@
     display               : grid;
     overflow-y            : auto;
     grid-template-columns : repeat(auto-fill, minmax(200px, 1fr));
+    align-content         : flex-start;
     gap                   : var(--spacing-lg);
     width                 : clamp(300px, 80%, 700px);
     height                : clamp(300px, 80vh, 600px);

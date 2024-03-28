@@ -1,6 +1,7 @@
 import {ROOT_MODAL} from "../../constants/root";
 import {IMAGE_STANDARD_XLARGE} from "../../constants/api";
 import getDataApi from "../../utils/getDataApi";
+import notification from "../Notification";
 
 import * as classes from "./Characters.module.css";
 
@@ -19,7 +20,6 @@ class Characters {
         let htmlContent = "";
         data.forEach(({name, thumbnail: {extension, path}}) => {
             const imgSrc = `${path}/${IMAGE_STANDARD_XLARGE}.${extension}`;
-
             htmlContent += `
                 <li class="${classes.item}">
                     <img class="${classes["item__img"]}" src="${imgSrc}" alt=""> 
@@ -36,13 +36,9 @@ class Characters {
         `;
     }
 
-    renderNotification() {
-        console.log("no content");
-    }
-
     async render(url) {
         const data = await getDataApi.getData(url);
-        data.length ? this.renderContent(data) : this.renderNotification();
+        data.length ? this.renderContent(data) : notification.render();
     }
 }
 
