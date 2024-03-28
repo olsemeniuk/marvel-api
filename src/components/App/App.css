@@ -2,6 +2,8 @@
     --color-dark  : #222222;
     --color-blue  : #3199dc;
     --color-light : #f8f9fa;
+    --color-white : #ffffff;
+    --color-black : #000000;
 
     --spacing-sm  : 10px;
     --spacing-md  : 15px;
@@ -28,10 +30,14 @@ body {
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    max-width       : 100%;
+    max-height      : 100%;
+    object-fit      : cover;
     object-position : center;
+}
+
+a {
+    color : inherit;
 }
 
 .button {
@@ -39,4 +45,11 @@ img {
     background-color : transparent;
     outline          : none;
     cursor           : pointer;
+}
+
+.icon-about {
+    margin     : 0;
+    padding    : 20px 50px;
+    color      : var(--color-white);
+    text-align : right;
 }

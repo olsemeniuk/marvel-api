@@ -5,7 +5,7 @@ import axios from "axios";
 class GetDataApi {
     constructor() {
         this.timestamp = Date.now();
-        this.hash = md5(this.timestamp + PRIVATE_KEY + PUBLIC_KEY);
+        this.hash = md5(this.timestamp + PRIVATE_KEY + PUBLIC_KEY + 'test');
     }
 
     async getData(url) {
