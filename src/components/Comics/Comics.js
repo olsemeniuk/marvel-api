@@ -2,7 +2,7 @@ import {BASIC_URL, CHARACTERS_URL, COMICS_URL, IMAGE_NOT_AVAILABLE, IMAGE_STANDA
 import getDataApi from "../../utils/getDataApi";
 import {ROOT_INDEX} from "../../constants/root";
 
-import "./Comics.css";
+import * as classes from "./Comics.module.css";
 
 class Comics {
     async render() {
@@ -17,21 +17,21 @@ class Comics {
 
             const imgSrc = `${path}/${IMAGE_STANDARD_XLARGE}.${extension}`;
             htmlContent += `
-                <li class="comics-list__item" data-url="${charactersUrl}">
-                    <span class="comics-list__item-title">${title}</span> 
-                    <img class="comics-list__item-img" src="${imgSrc}" alt="">
+                <li class="${classes.item}" data-url="${charactersUrl}">
+                    <span class="${classes.title}">${title}</span> 
+                    <img class="${classes.img}" src="${imgSrc}" alt="">
                 </li>
             `;
         });
 
-        ROOT_INDEX.innerHTML = `<ul class="comics-list">${htmlContent}</ul>`;
+        ROOT_INDEX.innerHTML = `<ul class="${classes.list}">${htmlContent}</ul>`;
     }
 
     eventListener() {
-        const comicsList = document.querySelector(".comics-list");
+        const comicsList = document.querySelector(`.${classes.list}`);
         comicsList.addEventListener("click", event => {
             const {target} = event;
-            const isItem = target.closest(".comics-list__item");
+            const isItem = target.closest(`.${classes.item}`);
             if (!isItem) return;
 
             const charactersUrl = isItem.dataset.url;
